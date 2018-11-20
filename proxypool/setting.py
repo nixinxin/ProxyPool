@@ -9,7 +9,7 @@ PASSWORD = ''
 get_proxy_timeout = 9
 
 # 代理池数量界限
-POOL_LOWER_THRESHOLD = 20
+POOL_LOWER_THRESHOLD = 60
 POOL_UPPER_THRESHOLD = 100
 
 # 检查周期
@@ -17,4 +17,4 @@ VALID_CHECK_CYCLE = 60
 POOL_LEN_CHECK_CYCLE = 20
 
 # 测试API，用百度来测试
-TEST_API='http://www.baidu.com'
+TEST_API = 'http://www.baidu.com'

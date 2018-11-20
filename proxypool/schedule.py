@@ -2,10 +2,9 @@ import time
 from multiprocessing import Process
 import asyncio
 import aiohttp
-try:
-    from aiohttp.errors import ProxyConnectionError,ServerDisconnectedError,ClientResponseError,ClientConnectorError
-except:
-    from aiohttp import ClientProxyConnectionError as ProxyConnectionError,ServerDisconnectedError,ClientResponseError,ClientConnectorError
+
+from aiohttp import ClientProxyConnectionError as ProxyConnectionError, ServerDisconnectedError, ClientResponseError, \
+    ClientConnectorError
 from proxypool.db import RedisClient
 from proxypool.error import ResourceDepletionError
 from proxypool.getter import FreeProxyGetter
@@ -41,9 +40,8 @@ class ValidityTester(object):
                             print('Valid proxy', proxy)
                 except (ProxyConnectionError, TimeoutError, ValueError):
                     print('Invalid proxy', proxy)
-        except (ServerDisconnectedError, ClientResponseError,ClientConnectorError) as s:
+        except Exception as s:
             print(s)
-            pass
 
     def test(self):
         """

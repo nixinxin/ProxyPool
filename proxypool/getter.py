@@ -1,6 +1,8 @@
-from .utils import get_page
-from pyquery import PyQuery as pq
 import re
+
+from pyquery import PyQuery as pq
+
+from .utils import get_page
 
 
 class ProxyMetaclass(type):
@@ -22,6 +24,7 @@ class ProxyMetaclass(type):
 
 
 class FreeProxyGetter(object, metaclass=ProxyMetaclass):
+
     def get_raw_proxies(self, callback):
         proxies = []
         print('Callback', callback)
